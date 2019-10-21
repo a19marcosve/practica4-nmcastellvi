@@ -1,0 +1,17 @@
+<table>
+    <tr *ngFor="let project of projects">
+        <td>
+            <a routerLink="viewer-project/{{project.id}}">
+                <span>>{{ project.name }} </span>
+            </a>
+        </td>
+    </tr>
+</table>
+
+<form>
+    <fieldset>
+        <legend>New Project</legend>
+        <input name="name" type="text" [(ngModel)]="project.name" placeholder="Project name" />
+    </fieldset>
+    <input value="Save" type="submit" (click)="saveProject()" />
+</form>
